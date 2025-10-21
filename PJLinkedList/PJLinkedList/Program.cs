@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,7 +37,8 @@ namespace PJLinkedList
             Console.WriteLine("\n4.Them SV X vao truoc sinh vien co MSSV.");
             Console.WriteLine("\n5.Them SV Q vao giua X va Y.");
             Console.WriteLine("\n6.Tim SV X.");
-            Console.WriteLine("\n7.Exit 8.");
+            Console.WriteLine("\n7.Tim min Diem.");
+            Console.WriteLine("\n8.Tim max Diem.");
 
             //ABCDEFGHIJ
             string input = Console.ReadLine();
@@ -144,6 +145,22 @@ namespace PJLinkedList
                             Console.WriteLine("\nNhap  MSSV  can tim:");
                             string findMSSV = Console.ReadLine();
                             qlsv.Find(findMSSV);
+                            Console.WriteLine("\n-----------------------------------");
+                            goto menu;
+                            break;
+                        }
+                    case 7:
+                        {
+                            
+                            qlsv.FindMinDiem();
+                            Console.WriteLine("\n-----------------------------------");
+                            goto menu;
+                            break;
+                        }
+                    case 8:
+                        {
+
+                            qlsv.FindMaxDiem();
                             Console.WriteLine("\n-----------------------------------");
                             goto menu;
                             break;
