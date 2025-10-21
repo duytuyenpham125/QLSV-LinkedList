@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -112,18 +112,55 @@ namespace PJLinkedList
 
             return newNode;
         }
-        public Node Find(string V)
+        public void Find(string V)
         {
-            if (First == null || V == null) return null;
+            if (First == null || V == null) return ;
             Node curNode = First;
             while (curNode.Next != null && curNode.Value.MSSV!=V)
             {
                 curNode = curNode.Next;
             }
             if (curNode.Value.MSSV == V)
-                return curNode;
+            {
+                Console.WriteLine(curNode.Value);
+            }
+                
             else
-                return null; 
+                return ; 
+        }
+        public void FindMinDiem()
+        {
+            double min = 100,diem;
+            if (First == null ) return;
+            Node curNode = First;
+            while (curNode.Next != null)
+            {
+                if (double.TryParse(curNode.Value.Diem, out diem))
+                {
+                    if (diem < min)
+                        min = diem;   
+                }
+                Console.WriteLine(curNode.Value);
+                break;
+            }
+            
+        }
+        public void FindMaxDiem()
+        {
+            double max = 0, diem;
+            if (First == null) return;
+            Node curNode = First;
+            while (curNode.Next != null)
+            {
+                if (double.TryParse(curNode.Value.Diem, out diem))
+                {
+                    if (diem >= max)
+                        max = diem;
+                }
+                Console.WriteLine(curNode.Value);
+                break;
+            }
+
         }
         public void PrintList()
         {
